@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<project
+         xmlns="http://ki.ujep.cz/ns/akreditace"
+         xmlns:xt="http:/ki.ujep.cz/ns/xtools"
+         xmlns:xtag="http:/ki.ujep.cz/ns/xtags"
+         xmlns:html="http://www.w3.org/1999/xhtml">
+<studijní_programy>
+    <studijní_program id="api_bc">
+        <A-I>
+            <název-vysoké-školy><xt:string xpath="#skola"/></název-vysoké-školy>
+            <název-součásti-vysoké-školy><xt:string xpath="#soucast"/></název-součásti-vysoké-školy>
+            <název-studijního-programu>Aplikovaná informatika</název-studijního-programu>
+            <typ-žádosti-akreditaci>udělení akreditace</typ-žádosti-akreditaci>
+            <datum-schválení-žádosti><xtag:provisional>1.5.2025</xtag:provisional></datum-schválení-žádosti>
+            <odkaz_na_relevantní_vnitřní_předpisy>
+                <xt:contents xpath="#odkaz_vnitrni_predpisy"/>
+            </odkaz_na_relevantní_vnitřní_předpisy>
+        </A-I>
+        <B-I>
+            <název-studijního-programu><xt:string xpath="ancestor::ak:studijní_program/ak:A-I/ak:název-studijního-programu"/></název-studijního-programu>
+            <typ-studijního-programu>bakalářský</typ-studijního-programu>
+            <profil-studijního-programu>profesně zaměřený</profil-studijního-programu>
+            <forma-studia>prezenční</forma-studia>
+            <garant-studijního-programu><xt:string f="aname" idref="fiser"/></garant-studijního-programu>
+
+            <rigorózní-řízení titul="RNDr.">ne</rigorózní-řízení>
+        </B-I>
+    </studijní_program>
+</studijní_programy>
+
+<učitelé>
+    <učitel id="fiser">
+        <jméno>Jiří Fišer</jméno>
+        <tituly>Mgr. PhD.</tituly>
+    </učitel>
+</učitelé>
+
+<common>
+    <text id="skola">Univerzita J.E. Purkyně v Ústí nad Labem</text>
+    <text id="soucast">Přírodovědecká fakulta</text>
+    <html id="odkaz_vnitrni_predpisy">
+        <html:ul>
+            <html:li><html:a href="predpis">předpis 1</html:a></html:li>
+            <html:li><html:a href="predpis">předpis 2</html:a></html:li>
+        </html:ul>
+    </html>
+</common>
+</project>

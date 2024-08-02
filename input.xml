@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xt="http:/ki.ujep.cz/ns/xtools" xmlns:func="http://ki.ujep.cz/functions">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Transformovaný dokument</title>
+  </head>
+  <body>
+
+    <div xmlns="" class="program">
+        <div class="section" head="A-I &#x2013; Z&#xE1;kladn&#xED; informace o &#x17E;&#xE1;dosti o akreditaci">
+            <div class="bh">Název vysoké školy:</div><div class="bv">Univerzita J.E. Purkyně v Ústí nad Labem</div>
+            <div class="bh">Název součásti vysoké školy:</div><div class="bv">Přírodovědecká fakulta</div>
+            <div class="bh">Název studijního programu:</div><div class="bv">Aplikovaná informatika</div>
+            
+            
+            <div class="bh">Odkaz na relevantní vnitřní předpisy:</div><div class="bv">
+                
+        <ul xmlns="http://www.w3.org/1999/xhtml">
+            <li><a href="predpis">předpis 1</a></li>
+            <li><a href="predpis">předpis 2</a></li>
+        </ul>
+    </div>
+        </div>
+        <div class="section" head="B-I &#x2014; Charakteristika studijn&#xED;ho programu"><table class="section">
+            <tr><td class="th">Název studijního programu</td><td class="tv">Aplikovaná informatika</td></tr>
+            <tr><td class="th">Typ studijního programu</td><td class="tv">bakalářský</td></tr>
+            <tr><td class="th">Profil studijního programu</td><td class="tv">profesně zaměřený</td></tr>
+            <tr><td class="th">Forma studia</td><td class="tv">prezenční</td></tr>
+
+            <tr><td class="th">Rigorózní řízení</td><td style="padding:0;"><table class="partition"><tr><td class="tv" style="width:20%;">ne</td><td class="th" style="width:60%;">Udělovaný akademický titul</td><td class="tv" style="width:20%;">RNDr.</td></tr></table></td></tr>
+        </table></div>
+    </div>
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="akreditace.css" /></body>
+</html>
+

@@ -1,0 +1,81 @@
+@page {
+    size: A4; /* Nastavení velikosti stránky na A4 */
+    margin: 1cm; /* Nastavení okrajů na 1 cm */
+}
+
+
+div.section::before {
+    display: block;
+    content: attr(head);
+    background-color: #b4c7dc;
+    padding: 2pt;
+    border: 1.5pt solid black;
+    font-weight: bold;
+}
+
+div {
+}
+
+span {
+    padding: 2pt;
+}
+
+div.section {
+    page-break-after: always;
+}
+
+div.bh {
+    font-weight: bold;
+}
+
+div.bv {
+
+}
+
+table.section {
+    border-collapse: collapse; /* Sloučení hranic buněk */
+    width: 100%;
+}
+
+table.partition {
+    border-collapse: collapse; /* Sloučení hranic buněk */
+    margin: 0;
+    border: none;
+    width: 100%;
+    padding: 0;
+}
+
+td {
+    border: 1px solid black; /* Nastavení 1px hranice */
+    padding: 2px; /* Volitelné: prostor uvnitř buněk */
+    text-align: left; /* Zarovnání textu vlevo */
+}
+
+td.th {
+    width:30%;
+    background-color: #f7caac;
+    font-weight: bold;
+}
+
+table.partition td.th {
+    width: auto;
+    background-color: #f7caac;
+    font-weight: bold;
+    border-bottom-width: 0;
+    border-top-width: 0;
+}
+
+td.tv {
+    width:70%;
+}
+
+table.partition td.tv {
+    width: auto;
+    border: 0;
+}
+
+.annotation {
+    color: green;
+    font-size: x-small;
+}
+
