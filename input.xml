@@ -1,40 +1,164 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xt="http:/ki.ujep.cz/ns/xtools" xmlns:func="http://ki.ujep.cz/functions">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Transformovaný dokument</title>
-  </head>
-  <body>
+<?xml version="1.0" encoding="utf-8"?>
+<akreditace xmlns="http://ki.ujep.cz/ns/akreditace" xmlns:xt="http://ki.ujep.cz/ns/xtools" xmlns:tag="http://ki.ujep.cz/ns/xtags" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:html="http://www.w3.org/1999/xhtml">
 
-    <div xmlns="" class="program">
-        <div class="section" head="A-I &#x2013; Z&#xE1;kladn&#xED; informace o &#x17E;&#xE1;dosti o akreditaci">
-            <div class="bh">Název vysoké školy:</div><div class="bv">Univerzita J.E. Purkyně v Ústí nad Labem</div>
-            <div class="bh">Název součásti vysoké školy:</div><div class="bv">Přírodovědecká fakulta</div>
-            <div class="bh">Název studijního programu:</div><div class="bv">Aplikovaná informatika</div>
-            
-            
-            <div class="bh">Odkaz na relevantní vnitřní předpisy:</div><div class="bv">
-                
-        <ul xmlns="http://www.w3.org/1999/xhtml">
-            <li><a href="predpis">předpis 1</a></li>
-            <li><a href="predpis">předpis 2</a></li>
-        </ul>
-    </div>
-        </div>
-        <div class="section" head="B-I &#x2014; Charakteristika studijn&#xED;ho programu"><table class="section">
-            <tr><td class="th">Název studijního programu</td><td class="tv">Aplikovaná informatika</td></tr>
-            <tr><td class="th">Typ studijního programu</td><td class="tv">bakalářský</td></tr>
-            <tr><td class="th">Profil studijního programu</td><td class="tv">profesně zaměřený</td></tr>
-            <tr><td class="th">Forma studia</td><td class="tv">prezenční</td></tr>
+<studijní_program id="api_bc">
+    <A-I xt:extends="#t:A-I"/>
+    <B-I xt:extends="#t:B-I">
+        <forma-studia>kombinovaná</forma-studia>
+    </B-I>
+</studijní_program>
 
-            <tr><td class="th">Rigorózní řízení</td><td style="padding:0;"><table class="partition"><tr><td class="tv" style="width:20%;">ne</td><td class="th" style="width:60%;">Udělovaný akademický titul</td><td class="tv" style="width:20%;">RNDr.</td></tr></table></td></tr>
-        </table></div>
-    </div>
+<učitelé>
+    <učitel id="fiser">
+        <jméno>Jiří Fišer</jméno>
+        <tituly>Mgr. PhD.</tituly>
+    </učitel>
+</učitelé>
+<values xmlns="http://ki.ujep.cz/ns/akreditace" xmlns:xt="http://ki.ujep.cz/ns/xtools" xmlns:tag="http://ki.ujep.cz/ns/xtags" xmlns:html="http://www.w3.org/1999/xhtml">
+    <text id="skola">Univerzita J.E. Purkyně v Ústí nad Labem</text>
+    <text id="soucast">Přírodovědecká fakulta</text>
+    <html id="odkaz_vnitrni_predpisy">
+        <html:ul tag:warn="zkontrolovat platnost odkazů">
+            <html:li><html:a href="predpis">předpis 1</html:a></html:li>
+            <html:li><html:a href="predpis">předpis 2</html:a></html:li>
+        </html:ul>
+    </html>
+</values>
+<templates xmlns="http://ki.ujep.cz/ns/akreditace" xmlns:xt="http://ki.ujep.cz/ns/xtools" xmlns:tag="http://ki.ujep.cz/ns/xtags" xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:html="http://www.w3.org/1999/xhtml">
+    <A-I id="t:A-I">
+        <název-vysoké-školy><xt:string xpath="#skola"/></název-vysoké-školy>
+        <název-součásti-vysoké-školy><xt:string xpath="#soucast"/></název-součásti-vysoké-školy>
+        <název-studijního-programu>Aplikovaná informatika</název-studijního-programu>
+        <typ-žádosti-akreditaci>udělení akreditace</typ-žádosti-akreditaci>
+        <datum-schválení-žádosti tag:error="nutno doplnit"/>
+        <odkaz_na_relevantní_vnitřní_předpisy>
+            <xt:contents xpath="#odkaz_vnitrni_predpisy"/>
+        </odkaz_na_relevantní_vnitřní_předpisy>
+    </A-I>
 
-
-
-
-
-<link rel="stylesheet" type="text/css" href="akreditace.css" /></body>
-</html>
-
+    <B-I id="t:B-I">
+        <název-studijního-programu><xt:string xpath="ancestor::ak:studijní_program/ak:A-I/ak:název-studijního-programu"/></název-studijního-programu>
+        <typ-studijního-programu>bakalářský</typ-studijního-programu>
+        <profil-studijního-programu>profesně zaměřený</profil-studijního-programu>
+        <forma-studia/>
+        <standardní-doba-studia/>
+        <jazyk-studia>čeština</jazyk-studia>
+        <udělovaný-akademický-titul/>
+        <rigorózní-řízení titul="" tag:empty="">ne</rigorózní-řízení>
+        <garant-studijního-programu><xt:string idref="fiser|aname"/></garant-studijního-programu>
+        <regulované-povolání>ne</regulované-povolání>
+        <bezpečnostní-povolání>ne</bezpečnostní-povolání>
+        <uznávací-orgán tag:empty=""/>
+        <oblast-vzdělávání>Informatika</oblast-vzdělávání>
+        <cíle-studia>
+            <div xmlns="http://www.w3.org/1999/xhtml" xmlns:xt="http://ki.ujep.cz/ns/xtools" id="cile_bc">
+    <p>Zde budou cíle vzdělání:</p>
+    <ul>
+        <li>bod jedna</li>
+        <li>bod dva</li>
+    </ul>
+    <p>
+        A pokračuje to takto xxx xxx
+    </p>
+    <p>
+        Další odstavec ... <xt:string idref="ki_apr1"/> ppp
+    </p>
+</div>
+        </cíle-studia>
+        <profil-absolventa-studijního-programu>
+            <div xmlns="http://www.w3.org/1999/xhtml" id="profil">
+    <p>Absolvent v průběhu studia získá široké teoretické znalosti v oblastech, které jsou klíčové pro základní pochopení principů informačních technologií resp. tvoří základ praktických řešení:</p>
+<ul>
+<li><p>základy matematické analýzy: diferenciální a integrální počet funkce jedné proměnné, obyčejné diferenciální rovnice</p></li>
+<li><p>základy lineární algebry: vektorové prostory a řešení soustav rovnic</p></li>
+<li><p>teoretické základy informatiky: výrokový a predikátový počet, množiny a relace mezi nimi, číselné soustavy, základy teorie grafů a teorie složitosti</p></li>
+<li><p>pravděpodobnost a statistika</p></li>
+<li><p>základy numerické matematiky</p></li>
+<li><p>základy programování: procedurální programování a základy objektového programování</p></li>
+<li><p>základy algoritmizace a znalost elementárních datových struktur</p></li>
+</ul>
+<p>Absolvent získá také širší faktické znalosti a elementární dovednosti ve všech klíčových oblastech informačních technologií, a to bez ohledu na volbu bloků povinně volitelných předmětů (PVK):</p>
+<ul>
+<li><p>programování jednoduchých konzolových aplikací a skriptů v jazyce Python</p></li>
+<li><p>základy relačních databází a jazyka SQL</p></li>
+<li><p>základy analogové a digitální elektroniky</p></li>
+<li><p>principy počítačových sítí a internetových protokolů</p></li>
+<li><p>uživatelský přístup a administrace v operačním systému Linux</p></li>
+<li><p>základy počítačového hardwaru (architektura počítačů)</p></li>
+<li><p>základy zpracování dat</p></li>
+<li><p>základy kyberbezpečnosti</p></li>
+</ul>
+<p>Všichni studenti také bez ohledu na volbu PVK získají základní dovednosti i v oblasti počítačového hardwaru a elektroniky včetně účasti na laboratorních cvičeních.</p>
+<p>Tyto faktické znalosti a dovednosti si dále prohloubí v rámci zvolených <strong>profilujících bloků povinně volitelných předmětů</strong> a především v těchto oblastech získají dostatečné odborné dovednosti, aby mohli zastávat juniorské pozice resp. byli dobře připraveni na produktová školení (rozsah bakalářského studia neumožňují pokrýt všechny relevantní produkty v dané oblasti) a další zvyšování odborné kvalifikace. Absolvent by měl být v těchto oblastech schopen navrhovat vlastní řešení resp. hodnotit možnosti existujících produktů.</p>
+<p>Programování a softwarové inženýrství</p>
+<ul>
+<li><p>objektové programování v jazyce C# včetně použití základních návrhových vzorů</p></li>
+<li><p>objektově orientovaný návrh (UML)</p></li>
+<li><p>softwarové inženýrství (analýza, testování, týmová spolupráce – Git, návrh a udržování API)</p></li>
+<li><p>programování GUI aplikace včetně webového programování (HTML5, CSS, Javascript) a programování pro mobilní platformy (Android)</p></li>
+</ul>
+<p>Absolventi tohoto bloku by měli být schopni vytvářet jednoduché GUI a webové interaktivní aplikace, spolupracovat v týmu vývojářů, primárně na pozici programátora, ale také podílet se na návrhu softwarových systémů na pozici analytika.</p>
+<p>Databázové systémy a zpracování dat</p>
+<ul>
+<li><p>praktické využití SQL databází (návrh databází, programový přístup, zásady administrace)</p></li>
+<li><p>praktické využití vybraných distribuovaných NoSQL databází pro zpracování velkých dat (dokumentové, grafové)</p></li>
+<li><p>praktické využití různých statistických metod</p></li>
+<li><p>zpracování časových řad a signálů</p></li>
+<li><p>základní aplikace metod strojového učení</p></li>
+</ul>
+<p>Absolventi tohoto bloku by měli být schopni vytvářet vlastní databáze, používat databáze jako zdroje dat pro aplikace, spravovat menší databázové systémy, využívat alternativních databází pro ukládání specifických dat (dokumenty, grafy, apod.) a využívat řady metod zpracování dat včetně statistických a metod strojového učení.</p>
+<p>Podniková informatika</p>
+<ul>
+<li><p>základní analýza a vizualizace podnikových dat</p></li>
+<li><p>podnikové informační systémy</p></li>
+</ul>
+<p>Absolventi tohoto bloku získají dovednosti praktického využívání podnikových informačních systémů včetně schopnosti zpracování a vizualizace dat (dashboardy).</p>
+<p>Operační systémy a virtualizace</p>
+<ul>
+<li><p>administrace operačního systému Windows a Linuxu</p></li>
+<li><p>obecné principy operačních systémů (správa paměti, správa procesů, vlákna a synchronizace, souborové systémy) a její důsledky pro aplikační programátory</p></li>
+<li><p>využití různých úrovní virtualizace a kontejnerizace v současných OS</p></li>
+</ul>
+<p>Absolventi tohoto bloku budou schopni administrovat klíčové operační systémy a využívat je pro hostování aplikačních kontejnerů (application stack), včetně pochopení principů, na nichž jsou OS postaveny.</p>
+<p>Kybernetická bezpečnost</p>
+<ul>
+<li><p>základní principy dependability (spolehlivost, systémová kontrola a diagnostika)</p></li>
+<li><p>základy kryptologie</p></li>
+<li><p>základní bezpečnostní technologie</p></li>
+<li><p>analýza síťové komunikace</p></li>
+</ul>
+<p>Absolventi tohoto bloku budou schopni analyzovat logy síťových prvků či vlastní síťové komunikace a shromažďovat tyto informace do centralizovaných systémů. Na základě komparace a relací těchto informací dokáží vyhledávat zranitelnosti. Cílové kompetence absolventa jsou ve schopnosti penetračního testování aktiv, jehož výsledky bude dále schopen využít k odhalení skutečných hrozeb těchto zranitelností.</p>
+<p>Počítačové sítě a protokoly</p>
+<ul>
+<li><p>drátové sítě</p></li>
+<li><p>bezdrátové sítě</p></li>
+<li><p>internetové protokoly</p></li>
+</ul>
+<p>Absolventi tohoto bloku budou schopni plánovat, realizovat, optimalizovat a hlavně spravovat (včetně analýzy datových toků) rozlehlejší počítačové sítě. Primární zaměření bloku je na L3 vrstvu ISO-OSI referenčního modelu (směrovací protokoly a jejich redistribuce), dále je taktéž řešena vrstva L2 na úrovni logického členění a redundantní linky fyzické infrastruktury. Nedílnou součástí je pak také řešení problematiky bezpečnosti na těchto vrstvách.</p>
+<p>Elektronika a automatizace</p>
+<ul>
+<li><p>analogová elektronika</p></li>
+<li><p>digitální elektronika</p></li>
+<li><p>programování mikroprocesorů</p></li>
+<li><p>průmyslová automatizace (včetně základní teorie řízení)</p></li>
+</ul>
+<p>Absolventi tohoto bloku budou připraveni na implementaci jednoduchých vestavěných systémů a jejich programování, včetně využívání průmyslových standardů a řešení v oblasti automatizace.</p>
+<p>Studijní plán v oblasti aplikované informatiky musí reflektovat rychlý a v některých případech i obtížně predikovatelný vývoj informačních technologií. Obsah předmětů z tohoto důvodu ve většině případů nevychází z konkrétních produktů či aplikací, ale snaží se poskytnout především univerzální dovednosti, resp. znalosti. Nástroje využívané v jednotlivých předmětech jsou navíc zvoleny tak, aby představovaly obecně používané, ale přitom moderní přístupy. Preferovány jsou navíc open-source nástroje s širokou komunitou vývojářů a uživatelů.</p>
+<p>Obecné kompetence</p>
+<p>Studijní program zajišťuje absolventům i dosažení obecných kompetencí (způsobilostí), a to v těchto oblastech:</p>
+<ul>
+<li><p>prezentační dovednosti, týmové a organizační kompetence (<em>Odborná prezentace</em>, <em>Projektové řízení</em>, <em>Projektový seminář I</em> a <em>II</em>)</p></li>
+<li><p>jazykové kompetence</p></li>
+<li><p>základní právní a ekonomické kompetence (<em>Právní a ekonomické minimum pro IT</em>)</p></li>
+</ul>
+<p>Jazykové kompetence jsou v souladu s profilem absolventa soustředěny na anglický jazyk. Studijní plán obsahuje dvousemestrální kurz anglického jazyka. Angličtina se uplatňuje i v odborných předmětech ať již v podobě povinných výukových materiálů, tak i možností použití anglického jazyka pro vytváření výstupních materiálů (seminárních prací, dokumentace apod.).</p>
+</div>
+        </profil-absolventa-studijního-programu>
+        <uplatnitelnost-absolventa/>
+        <pravidla-pro-tvorbu-studijních-plánů/>
+        <podmínky-k-přijetí-ke-studiu/>
+        <počet-uchazečů/>
+        <návaznost-na-další-typy-studijních-programů/>
+    </B-I>
+</templates>
+</akreditace>

@@ -1,0 +1,33 @@
+    <root xmlns:xt="http://ki.ujep.cz/ns/xtools"
+          xmlns:tag="http://ki.ujep.cz/ns/xtags">
+    <es>
+        <ex><xt:string xpath="#v1"/></ex>
+        <e1 xt:extends="#t1">
+           <a>a1</a>
+        </e1>
+
+        <e2 xt:extends="#t1">
+           <c>c2</c>
+        </e2>
+
+        <e3 xt:extends="#t2">
+           <b>b3</b>
+        </e3>
+     </es>
+
+      <templates>
+        <template id="t1" xt:extends="#t2">
+          <a>a_t1</a>
+          <b tag:default="init">b_t1</b>
+        </template>
+
+        <template id="t2">
+          <a>a_t2</a>
+          <b>b_t2</b>
+          <c>c_t2</c>
+        </template>
+      </templates>
+        <values>
+            <value id="v1">value1</value>
+        </values>
+    </root>

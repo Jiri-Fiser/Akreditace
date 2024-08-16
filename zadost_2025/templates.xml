@@ -1,0 +1,43 @@
+<templates xmlns="http://ki.ujep.cz/ns/akreditace"
+           xmlns:xt="http://ki.ujep.cz/ns/xtools"
+           xmlns:tag="http://ki.ujep.cz/ns/xtags"
+           xmlns:xi="http://www.w3.org/2001/XInclude"
+           xmlns:html="http://www.w3.org/1999/xhtml">
+    <A-I id="t:A-I">
+        <název-vysoké-školy><xt:string xpath="#skola"/></název-vysoké-školy>
+        <název-součásti-vysoké-školy><xt:string xpath="#soucast"/></název-součásti-vysoké-školy>
+        <název-studijního-programu>Aplikovaná informatika</název-studijního-programu>
+        <typ-žádosti-akreditaci>udělení akreditace</typ-žádosti-akreditaci>
+        <datum-schválení-žádosti tag:error="nutno doplnit"/>
+        <odkaz_na_relevantní_vnitřní_předpisy>
+            <xt:contents xpath="#odkaz_vnitrni_predpisy"/>
+        </odkaz_na_relevantní_vnitřní_předpisy>
+    </A-I>
+
+    <B-I id="t:B-I">
+        <název-studijního-programu><xt:string xpath="ancestor::ak:studijní_program/ak:A-I/ak:název-studijního-programu"/></název-studijního-programu>
+        <typ-studijního-programu>bakalářský</typ-studijního-programu>
+        <profil-studijního-programu>profesně zaměřený</profil-studijního-programu>
+        <forma-studia/>
+        <standardní-doba-studia/>
+        <jazyk-studia>čeština</jazyk-studia>
+        <udělovaný-akademický-titul/>
+        <rigorózní-řízení titul="" tag:empty="">ne</rigorózní-řízení>
+        <garant-studijního-programu><xt:string idref="fiser|aname"/></garant-studijního-programu>
+        <regulované-povolání>ne</regulované-povolání>
+        <bezpečnostní-povolání>ne</bezpečnostní-povolání>
+        <uznávací-orgán tag:empty=""/>
+        <oblast-vzdělávání>Informatika</oblast-vzdělávání>
+        <cíle-studia>
+            <xi:include href="cile.html" xpointer="xpointer(//*[@id='cile_bc'])"/>
+        </cíle-studia>
+        <profil-absolventa-studijního-programu>
+            <xi:include href="cile.html" xpointer="xpointer(//*[@id='profil'])"/>
+        </profil-absolventa-studijního-programu>
+        <uplatnitelnost-absolventa/>
+        <pravidla-pro-tvorbu-studijních-plánů/>
+        <podmínky-k-přijetí-ke-studiu/>
+        <počet-uchazečů/>
+        <návaznost-na-další-typy-studijních-programů/>
+    </B-I>
+</templates>

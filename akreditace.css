@@ -3,6 +3,41 @@
     margin: 1cm; /* Nastavení okrajů na 1 cm */
 }
 
+@font-face {
+  font-family: 'Noto Emoji';
+  src: url('fonts/NotoEmoji-Regular.ttf') format('truetype');
+}
+
+body {
+    font-size: 10pt;
+}
+
+.tag_error {
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.tag_warn {
+    text-decoration: underline;
+    text-decoration-color: lightsalmon;
+}
+
+.tag_error[data-tag] {
+    -prince-pdf-annotation-type: text;
+    -prince-pdf-annotation-position: page-right;
+    -prince-pdf-annotation-author: "";
+    -prince-pdf-annotation-contents: attr(data-tag);
+    -prince-pdf-annotation-color: red;
+}
+
+.tag_warn[data-tag] {
+    -prince-pdf-annotation-type: text;
+    -prince-pdf-annotation-position: page-right;
+    -prince-pdf-annotation-author: "";
+    -prince-pdf-annotation-contents: attr(data-tag);
+    -prince-pdf-annotation-color: lightsalmon;
+}
+
 
 div.section::before {
     display: block;
@@ -26,10 +61,12 @@ div.section {
 
 div.bh {
     font-weight: bold;
+    margin-bottom: 0.3em;
 }
 
 div.bv {
-
+    margin-bottom: 0.3em;
+    min-height: 1em;
 }
 
 table.section {
@@ -57,6 +94,12 @@ td.th {
     font-weight: bold;
 }
 
+td.vh {
+    width:100%;
+    background-color: #f7caac;
+    font-weight: bold;
+}
+
 table.partition td.th {
     width: auto;
     background-color: #f7caac;
@@ -69,6 +112,27 @@ td.tv {
     width:70%;
 }
 
+
+td.tv.tag_empty:empty, .tag_empty td.tv:empty {
+    background-color: lightcyan;
+}
+
+td.tv.tag_empty:empty::before, .tag_empty td.tv:empty::before {
+    content: '∅';
+    font-family: "Arial";
+    background-color: lightcyan;
+    color: darkcyan;
+}
+
+
+td.vv {
+    padding: 0.5em;
+}
+
+td.vv.tag_empty {
+    background-color: ivory;
+}
+
 table.partition td.tv {
     width: auto;
     border: 0;
@@ -77,5 +141,36 @@ table.partition td.tv {
 .annotation {
     color: green;
     font-size: x-small;
+}
+
+
+/* běžné html prvky */
+
+ul {
+    margin-top: 0.5em;   /* Zmenší horní odsazení */
+    margin-bottom: 0.5em; /* Zmenší spodní odsazení */
+    padding-left: 0;
+    margin-left: 2em/* Zmenší odsazení uvnitř seznamu (odrážky) */
+}
+
+ul {
+    margin-top: 0.5em;   /* Zmenší horní odsazení */
+    margin-bottom: 0.5em; /* Zmenší spodní odsazení */
+    padding-left: 0;
+    margin-left: 2em/* Zmenší odsazení uvnitř seznamu (odrážky) */
+}
+
+li {
+  padding-left: 0.2em;
+}
+
+p {
+    margin-top: 0;   /* Zmenší horní odsazení */
+    margin-bottom: 0.2em; /* Zmenší spodní odsazení */
+    text-align: justify;
+}
+
+a {
+    color: darkblue;
 }
 

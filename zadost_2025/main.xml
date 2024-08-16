@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<akreditace
+         xmlns="http://ki.ujep.cz/ns/akreditace"
+         xmlns:xt="http://ki.ujep.cz/ns/xtools"
+         xmlns:tag="http://ki.ujep.cz/ns/xtags"
+         xmlns:xi="http://www.w3.org/2001/XInclude"
+         xmlns:html="http://www.w3.org/1999/xhtml">
+
+<studijní_program id="api_bc">
+    <A-I xt:extends="#t:A-I"/>
+    <B-I xt:extends="#t:B-I">
+        <forma-studia>kombinovaná</forma-studia>
+    </B-I>
+</studijní_program>
+
+<xi:include href="ucitele.xml"/>
+<xi:include href="values.xml"/>
+<xi:include href="templates.xml"/>
+</akreditace>

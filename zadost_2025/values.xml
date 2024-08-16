@@ -1,0 +1,13 @@
+<values  xmlns="http://ki.ujep.cz/ns/akreditace"
+         xmlns:xt="http://ki.ujep.cz/ns/xtools"
+         xmlns:tag="http://ki.ujep.cz/ns/xtags"
+         xmlns:html="http://www.w3.org/1999/xhtml">
+    <text id="skola">Univerzita J.E. Purkyně v Ústí nad Labem</text>
+    <text id="soucast">Přírodovědecká fakulta</text>
+    <html id="odkaz_vnitrni_predpisy">
+        <html:ul tag:warn="zkontrolovat platnost odkazů">
+            <html:li><html:a href="predpis">předpis 1</html:a></html:li>
+            <html:li><html:a href="predpis">předpis 2</html:a></html:li>
+        </html:ul>
+    </html>
+</values>

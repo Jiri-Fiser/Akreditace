@@ -1,42 +1,22 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xt="http://ki.ujep.cz/ns/xtools" xmlns:tag="http://ki.ujep.cz/ns/xtags" xmlns:f="http://ki.ujep.cz/ns/functions">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Transformovaný dokument</title>
-    <link rel="stylesheet" type="text/css" href="akreditace.css" />
-  </head>
-  <body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:xt="http://ki.ujep.cz/ns/xtools"
+      lang="cs">
+<head>
+    <title>Minimal XHTML Document</title>
+    <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+    <link href="../akreditace.css" rel="stylesheet"/>
+    <style type="text/css">
 
-<div class="program">
-    <div class="section" head="A-I &#x2013; Z&#xE1;kladn&#xED; informace o &#x17E;&#xE1;dosti o akreditaci"><div class="bh">Název vysoké školy:</div><div class="bv"><span class="annotation">#skola</span>Univerzita J.E. Purkyně v Ústí nad Labem</div>
-        <div class="bh">Název součásti vysoké školy:</div><div class="bv"><span class="annotation">#soucast</span>Přírodovědecká fakulta</div>
-        <div class="bh">Název studijního programu:</div><div class="bv">Aplikovaná informatika</div>
-        
-        <div class="bh tag_error" data-tag="nutno doplnit">Datum schválení žádosti: </div><div class="bv tag_error"></div>
-        <div class="bh">Odkaz na relevantní vnitřní předpisy:</div><div class="bv">
-            <div class="annotation">#odkaz_vnitrni_predpisy</div>
-        <ul class="tag_warn" data-tag="zkontrolovat platnost odkaz&#x16F;">
-            <li><a href="predpis">předpis 1</a></li>
-            <li><a href="predpis">předpis 2</a></li>
-        </ul>
-    </div>
-    </div>
-    <div class="section" head="B-I &#x2014; Charakteristika studijn&#xED;ho programu"><table class="section">
-        <tr><td class="th">Název studijního programu</td><td class="tv"><span class="annotation">ancestor::ak:studijní_program/ak:A-I/ak:název-studijního-programu</span>Aplikovaná informatika</td></tr>
-        <tr><td class="th">Typ studijního programu</td><td class="tv">bakalářský</td></tr>
-        <tr><td class="th">Profil studijního programu</td><td class="tv">profesně zaměřený</td></tr>
-        <tr><td class="th">Forma studia</td><td class="tv">kombinovaná</td></tr>
-    <tr><td class="th">Standardní doba studia</td><td class="tv"></td></tr>
-        <tr><td class="th">Jazyk studia</td><td class="tv">čeština</td></tr>
-        
-        <tr class="tag_empty" data-tag=""><td class="th">Rigorózní řízení</td><td style="padding:0;"><table class="partition"><tr><td class="tv" style="width:20%;">ne</td><td class="th" style="width:60%;">Udělovaný akademický titul</td><td class="tv" style="width:20%;"></td></tr></table></td></tr>
-        <tr><td class="th">Garant studijního programu</td><td class="tv"><span class="annotation">#fiser</span><a href="#fiser">Mgr. Jiří Fišer, PhD.</a></td></tr>
-        <tr><td class="th">Zaměření na přípravu k výkonu regulovaného povolání</td><td class="tv">ne</td></tr>
-        <tr><td class="th">Zaměření na přípravu odborníků z oblasti bezpečnosti České republiky</td><td class="tv">ne</td></tr>
-        <tr class="tag_empty" data-tag=""><td class="th">Uznávací orgán</td><td class="tv"></td></tr>
-        <tr><td class="vh" colspan="2">Oblast vzdělávání</td></tr><tr><td class="vv" colspan="2">Informatika</td></tr>
-        <tr><td class="vh" colspan="2">Cíle studia</td></tr><tr><td class="vv" colspan="2">
-            <div id="cile_bc">
+        xt\:string::before {
+            display: inline;
+            content: "xt:string:" attr(idref) attr(xpath);
+            color: darkmagenta;
+        }
+    </style>
+</head>
+<body>
+<div id="cile_bc">
     <p>Zde budou cíle vzdělání:</p>
     <ul>
         <li>bod jedna</li>
@@ -46,12 +26,11 @@
         A pokračuje to takto xxx xxx
     </p>
     <p>
-        Další odstavec ... <span class="annotation">#ki_apr1</span><a href="#ki_apr1"></a> ppp
+        Další odstavec ... <xt:string idref="ki_apr1"/> ppp
     </p>
 </div>
-        </td></tr>
-        <tr><td class="vh" colspan="2">Profil absolventa studijního programu</td></tr><tr><td class="vv" colspan="2">
-            <div id="profil">
+
+<div id="profil">
     <p>Absolvent v průběhu studia získá široké teoretické znalosti v oblastech, které jsou klíčové pro základní pochopení principů informačních technologií resp. tvoří základ praktických řešení:</p>
 <ul>
 <li><p>základy matematické analýzy: diferenciální a integrální počet funkce jedné proměnné, obyčejné diferenciální rovnice</p></li>
@@ -138,18 +117,7 @@
 </ul>
 <p>Jazykové kompetence jsou v souladu s profilem absolventa soustředěny na anglický jazyk. Studijní plán obsahuje dvousemestrální kurz anglického jazyka. Angličtina se uplatňuje i v odborných předmětech ať již v podobě povinných výukových materiálů, tak i možností použití anglického jazyka pro vytváření výstupních materiálů (seminárních prací, dokumentace apod.).</p>
 </div>
-        </td></tr>
-        <tr><td class="vh" colspan="2">Předpokládaná uplatnitelnost absolventů na trhu práce</td></tr><tr><td class="vv" colspan="2"></td></tr>
-        <tr><td class="vh" colspan="2">Pravidla a podmínky pro tvorbu studijních plánů</td></tr><tr><td class="vv" colspan="2"></td></tr>
-        <tr><td class="vh" colspan="2">Podmínky k přijetí ke studiu</td></tr><tr><td class="vv" colspan="2"></td></tr>
-        <tr><td class="vh" colspan="2">Předpokládaný počet uchazečů zapsaných ke studiu ve studijním programu</td></tr><tr><td class="vv" colspan="2"></td></tr>
-        <tr><td class="vh" colspan="2">Návaznost na další typy studijních programů</td></tr><tr><td class="vv" colspan="2"></td></tr>
-    </table></div>
-</div>
-
-
-
-
 </body>
 </html>
+
 
